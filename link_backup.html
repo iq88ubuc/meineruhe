@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body style="text-align:center;">
+    <button onclick="GFG_Fun()">
+        generate link
+    </button>
+    <br/>
+
+    <script>
+        var i = 401;
+        var el_up = document.getElementById("GFG_UP");
+        var el_down = document.getElementById("GFG_DOWN");
+
+        el_up.innerHTML = "Click on the button to generate " +
+            "a link using JavaScript.";
+
+        function GFG_Fun() {
+
+            // Create anchor element.
+            var a = document.createElement('a');
+
+            // Create the text node for anchor element.
+            var link = document.createTextNode(i);
+
+            // Append the text node to anchor element.
+            a.appendChild(link);
+
+            // Set the title.
+            a.title = i;
+
+            // Set the href property.
+            a.href = "https://www.google.com/search?q="+(i++)+"+SAA-C03+question+discussion";
+
+            // Append the anchor element to the body.
+            //document.body.appendChild(a);
+            //document.body.appendChild(document.createElement("br"));
+			/*
+			var evt = document.createEvent("MouseEvents");
+			//the tenth parameter of initMouseEvent sets ctrl key
+			evt.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0,
+										true, false, false, false, 0, null);
+			a.dispatchEvent(evt);
+			*/
+			
+            // Open the link directly using ctrl+click
+			window.open("https://www.google.com/search?q="+(i++)+"+SAA-C03+question+discussion");
+        }
+    </script>
+</body>
+
+</html>
